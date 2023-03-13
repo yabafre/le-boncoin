@@ -28,16 +28,15 @@
                         @if (count($annonces) > 0)
                             @foreach ($annonces as $annonce)
                                 <div class="card">
-                                    <div class="card-header">{{ __('Annonce') }}</div>
+                                    <div class="card-header">{{ $annonce->created_at }}</div>
                                     <div class="card-body">
                                         <div class="card-title">{{ $annonce->title }}</div>
-                                        <ul>
-                                            <li>{{ $annonce->name }}</li>
-                                            <li>{{ $annonce->location }}</li>
-                                            <li>{{ $annonce->description }}</li>
-                                            <li>{{ $annonce->price }}</li>
-                                            <li>{{ $annonce->created_at }}</li>
-                                        </ul>
+                                        <div class="card-text">
+                                            <p>{{ $annonce->description }}</p>
+                                            <span>{{ $annonce->price }} €</span>
+                                            <h5>{{ $annonce->location }}</h5>
+                                        </div>
+                                        <a class="btn btn-outline-warning" href='mailto:{{ $annonce->email }}'>contacter {{ $annonce->name }}</a>
                                         <a class="btn btn-primary" href="{{ route('annonces.show', $annonce->id) }}">Voir l'annonce</a>
                                     </div>
                                 </div>

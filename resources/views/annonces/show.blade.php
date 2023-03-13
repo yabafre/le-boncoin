@@ -25,16 +25,14 @@
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
-                        <div class="card-header">{{ __('Annonce') }}</div>
+                        <div class="card-header">{{ $annonce->title }}</div>
                         <div class="card-body">
-                            <ul>
-                                <li>{{ $annonce->title }}</li>
-                                <li>{{ $annonce->name }}</li>
-                                <li>{{ $annonce->location }}</li>
-                                <li>{{ $annonce->description }}</li>
-                                <li>{{ $annonce->price }}</li>
-                                <li>{{ $annonce->created_at }}</li>
-                            </ul>
+                            <div class="card-text">
+                                <p>{{ $annonce->description }}</p>
+                                <span>{{ $annonce->price }} €</span>
+                                <h5>{{ $annonce->location }}</h5>
+                            </div>
+                            <a class="btn btn-outline-warning" href='mailto:{{ $annonce->email }}'>contacter {{ $annonce->name }}</a>
                         </div>
                     </div>
                 </div>
