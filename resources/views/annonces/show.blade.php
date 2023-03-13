@@ -14,14 +14,11 @@
         <a class="btn btn-outline-success me-2" type="button" href="{{ route('annonces.home') }}">Home</a>
     </div>
 </nav>
-<div class="container">
+<div class="container justify-content-center">
         @if (session('message'))
             <p>{{ session('message') }}</p>
         @endif
         <div class="row justify-content-center">
-            <button type="button" class="btn btn-primary">
-                <a href="{{ route('annonces.home') }}">Retour à la liste des annonces</a>
-            </button>
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <div class="card">
